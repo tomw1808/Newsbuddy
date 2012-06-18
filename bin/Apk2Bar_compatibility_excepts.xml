@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompatibilityExcepts qnxTargetVersion="2.0.0.7109" androidPlayerVersion="387" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Apk2Bar_compatibility_excepts.xsd">
+<!-- impact levels: 1 = warning; 2, 3, 4 = context-wise; 5 = stopper -->
+	<badging-features>
+		<!-- Some of these features are variations of the list from http://developer.android.com/reference/packages.html -->
+		<feature impact="2">android.hardware.audio.low_latency</feature>
+		<feature impact="2">android.hardware.bluetooth</feature>
+		<feature impact="2">android.bluetooth</feature>
+		<feature impact="2">android.hardware.camera</feature>
+		<feature impact="2">android.hardware.Camera</feature>
+		<feature impact="2">android.hardware.camera.autofocus</feature>
+		<feature impact="2">android.hardware.camera.flash</feature>
+		<feature impact="2">android.hardware.camera.front</feature>
+		<feature impact="2">android.service.wallpaper</feature>
+		<feature impact="2">android.software.live_wallpaper</feature>
+		<feature impact="2">android.hardware.nfc</feature>
+		<feature impact="2">android.nfc</feature>
+		<feature impact="2">android.hardware.sensor.barometer</feature>
+		<feature impact="2">android.hardware.sensor.light</feature>
+		<feature impact="2">android.hardware.sensor.proximity</feature>
+		<feature impact="2">android.software.sip</feature>
+		<feature impact="2">android.software.sip.voip</feature>
+		<feature impact="2">android.hardware.telephony</feature>
+		<feature impact="2">android.hardware.telephony.cdma</feature>
+		<feature impact="2">android.hardware.telephony.gsm</feature>
+		<feature impact="2">android.hardware.touchscreen.multitouch.jazzhand</feature>
+		<feature impact="2">com.android.vending</feature>
+		<feature impact="2">com.google.android.c2dm</feature>
+		<feature impact="2">com.google.android.maps</feature>
+		<feature impact="2">com.google.android.tts</feature>
+	<!-- cleared --> 
+		<!-- <feature impact="2">android.hardware.sensor</feature>
+		<feature impact="2">android.hardware.Sensor</feature>
+		<feature impact="2">android.hardware.touchscreen.multitouch.distinct</feature> 
+-->
+	</badging-features>
+	<badging-intent impact="5">app-widget</badging-intent>    <!-- Only if 'main' intent is not present. -->
+	<dex-method-access impact="5">NATIVE</dex-method-access>   <!-- If *.so presence also detected, otherwise impact="1" will be reported. -->
+	<badging-uses-library impact="4">
+		<except-supported>android.test.runner</except-supported>
+	</badging-uses-library>    <!-- 'uses-library-not-required' is ignored. --> 
+	<badging-minSdkVersion impact="5">10</badging-minSdkVersion>    <!-- badging may show 'sdkVersion' while target should be equal or above. --> 
+	<badging-maxSdkVersion impact="4">10</badging-maxSdkVersion>    <!-- badging may show 'maxSdkVersion' while target should be equal or below -->
+	<badging-targetSdkVersion impact="1">10</badging-targetSdkVersion>    <!-- badging may show 'targetSdkVersion' while target should be equal --> 
+	<badging-minLaunchable-count impact="5">1</badging-minLaunchable-count>    <!-- min 1 badging launchable activity is requiredt --> 
+	<badging-maxLaunchable-count impact="1">1</badging-maxLaunchable-count>    <!-- the 1st badging launchable activity will be selected by default other could be disregarded--> 
+	<badging-uses-config impact="4">
+		<reqFiveWayNav>true</reqFiveWayNav>
+		<reqHardKeyboard>1|0</reqHardKeyboard>
+		<reqKeyboardType>qwerty|twelvekey</reqKeyboardType>   <!-- 1|qwerty -means only if reqHardKeyboard is true; 0|twelvekey -means not supported at all -->
+		<reqNavigation>dpad|trackball|wheel</reqNavigation>
+	</badging-uses-config>
+	<badging-uses-perm>
+		<!-- signature -->
+		<permission impact="1">ACCESS_SURFACE_FLINGER</permission>
+		<permission impact="1">ACCOUNT_MANAGER</permission>
+		<permission impact="1">BIND_DEVICE_ADMIN</permission>
+		<permission impact="1">BIND_INPUT_METHOD</permission>
+		<permission impact="1">BRICK</permission>
+		<permission impact="1">BROADCAST_PACKAGE_REMOVED</permission>
+		<permission impact="1">BROADCAST_SMS</permission>
+		<permission impact="1">BROADCAST_WAP_PUSH</permission>
+		<permission impact="1">CHANGE_COMPONENT_ENABLED_STATE</permission>
+		<permission impact="1">CLEAR_APP_USER_DATA</permission>
+		<permission impact="1">DEVICE_POWER</permission>
+		<permission impact="1">DIAGNOSTIC</permission>
+		<permission impact="1">FACTORY_TEST</permission>
+		<permission impact="1">FORCE_BACK</permission>
+		<permission impact="1">HARDWARE_TEST</permission>
+		<permission impact="1">INJECT_EVENTS</permission>
+		<permission impact="1">INTERNAL_SYSTEM_WINDOW</permission>
+		<permission impact="1">MANAGE_APP_TOKENS</permission>
+		<permission impact="1">READ_FRAME_BUFFER</permission>
+		<permission impact="1">READ_INPUT_STATE</permission>
+		<permission impact="1">SET_ACTIVITY_WATCHER</permission>
+		<permission impact="1">SET_ORIENTATION</permission>
+		<permission impact="1">SET_PREFERRED_APPLICATIONS</permission>
+		<permission impact="1">UPDATE_DEVICE_STATS</permission>
+	<!-- signature or System -->	
+		<permission impact="1">ACCESS_CHECKIN_PROPERTIES</permission>
+		<permission impact="1">BIND_APPWIDGET</permission>
+		<permission impact="1">BIND_REMOTEVIEWS</permission>
+		<permission impact="1">BIND_WALLPAPER</permission>
+		<permission impact="1">CALL_PRIVILEGED</permission>
+		<permission impact="1">CONTROL_LOCATION_UPDATES</permission>
+		<permission impact="1">DELETE_CACHE_FILES</permission>
+		<permission impact="1">DELETE_PACKAGES</permission>
+		<permission impact="1">GLOBAL_SEARCH</permission>
+		<permission impact="1">INSTALL_LOCATION_PROVIDER</permission>
+		<permission impact="1">INSTALL_PACKAGES</permission>
+		<permission impact="1">MASTER_CLEAR</permission>
+		<permission impact="1">REBOOT</permission>
+		<permission impact="1">SET_TIME</permission>
+		<permission impact="1">STATUS_BAR</permission>
+		<permission impact="1">WRITE_GSERVICES</permission>
+		<permission impact="1">WRITE_SECURE_SETTINGS</permission>
+	<!-- perceived dangerous -->
+		<permission impact="1">BLUETOOTH_ADMIN</permission>
+		<permission impact="4">CHANGE_CONFIGURATION</permission>
+		<permission impact="1">CHANGE_NETWORK_STATE</permission>
+		<permission impact="4">CHANGE_WIFI_MULTICAST_STATE</permission>
+		<permission impact="1">CHANGE_WIFI_STATE</permission>
+		<permission impact="4">CLEAR_APP_CACHE</permission>
+		<permission impact="4">DUMP</permission>
+		<permission impact="1">GET_TASKS</permission>
+		<permission impact="4">MODIFY_PHONE_STATE</permission>
+		<permission impact="4">MOUNT_FORMAT_FILESYSTEMS</permission>
+		<permission impact="4">MOUNT_UNMOUNT_FILESYSTEMS</permission>
+		<permission impact="4">PERSISTENT_ACTIVITY</permission>
+		<permission impact="4">REORDER_TASKS</permission>
+		<permission impact="4">SET_ANIMATION_SCALE</permission>
+		<permission impact="4">SET_PROCESS_LIMIT</permission>
+		<permission impact="4">SET_TIME_ZONE</permission>
+		<permission impact="4">SIGNAL_PERSISTENT_PROCESSES</permission>
+		<permission impact="4">SYSTEM_ALERT_WINDOW</permission>
+		<permission impact="4">WRITE_APN_SETTINGS</permission>
+		<permission impact="4">SET_WALLPAPER_HINTS</permission> 
+		<permission impact="3">com.android.vending.BILLING</permission> 
+	<!-- normal -->
+		<permission impact="1">KILL_BACKGROUND_PROCESSES</permission>
+		<permission impact="1">RESTART_PACKAGES</permission>
+	<!-- cleared for non-live -->
+		<!-- <permission impact="1">SET_WALLPAPER</permission>
+	-->
+	</badging-uses-perm>
+	<dex-packages>
+		<package impact="1">com.android.vending</package>
+		<package impact="4">com.google.android.c2dm</package>
+		<package impact="3">com.google.android.maps</package>
+		<package impact="4">com.google.android.tts</package>
+	</dex-packages>
+	<dex-methods>
+		<method impact="1">android.media.AudioManager$getVibrateSetting</method>
+		<method impact="1">android.media.AudioManager$isBluetoothA2dpOn</method>
+		<method impact="1">android.media.AudioManager$isBluetoothScoOn</method>
+		<method impact="1">android.media.AudioManager$setBluetoothA2dpOn</method>
+		<method impact="1">android.media.AudioManager$setBluetoothScoOn </method>
+		<method impact="1">android.media.AudioManager$setRingerMode</method>
+		<method impact="1">android.media.AudioManager$setRouting</method>
+		<method impact="1">android.media.AudioManager$setVibrateSetting</method>
+		<method impact="1">android.media.AudioManager$shouldVibrate</method>
+		<method impact="1">android.media.AudioManager$startBluetoothSco</method>
+		<method impact="1">android.media.AudioManager$stopBluetoothSco</method>
+		<method impact="1">android.media.MediaPlayer$attachAuxEffect</method>
+		<method impact="1">android.media.MediaPlayer$setAudioStreamType</method>
+		<method impact="1">android.media.MediaPlayer$setAuxEffectSendLevel</method>
+	</dex-methods>
+	<dex-intent-actions>
+		<intent-action impact="1">android.intent.action.BOOT_COMPLETED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_ADDED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_CHANGED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_DATA_CLEARED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_REMOVED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_REPLACED</intent-action>
+		<intent-action impact="1">android.intent.action.PACKAGE_RESTARTED</intent-action>
+		<intent-action impact="1">android.intent.action.ACTION_POWER_CONNECTED</intent-action>
+		<intent-action impact="1">android.intent.action.ACTION_POWER_DISCONNECTED</intent-action>
+		<intent-action impact="1">android.intent.action.ACTION_SHUTDOWN</intent-action>
+		<intent-action impact="1">android.intent.action.USER_PRESENT</intent-action>
+	</dex-intent-actions>
+	<dex-intent-categs>
+		<intent-category impact="5">android.intent.category.HOME</intent-category>
+	</dex-intent-categs>
+</CompatibilityExcepts>
